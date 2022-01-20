@@ -192,7 +192,7 @@
             </property>
             <property name="sizeHint" stdset="0">
              <size>
-              <width>97</width>
+              <width>26</width>
               <height>20</height>
              </size>
             </property>
@@ -209,9 +209,18 @@
               </widget>
              </item>
              <item row="0" column="1">
-              <widget class="QLabel" name="label_6">
+              <widget class="QLabel" name="outTBruto">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
                <property name="text">
                 <string>0.00</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                </property>
               </widget>
              </item>
@@ -223,9 +232,18 @@
               </widget>
              </item>
              <item row="1" column="1">
-              <widget class="QLabel" name="label_7">
+              <widget class="QLabel" name="outTIESS">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
                <property name="text">
                 <string>0.00</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                </property>
               </widget>
              </item>
@@ -237,9 +255,18 @@
               </widget>
              </item>
              <item row="2" column="1">
-              <widget class="QLabel" name="label_8">
+              <widget class="QLabel" name="outTNeto">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
                <property name="text">
                 <string>0.00</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                </property>
               </widget>
              </item>

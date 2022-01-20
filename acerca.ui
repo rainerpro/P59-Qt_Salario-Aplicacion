@@ -31,7 +31,7 @@
    <item>
     <widget class="QLabel" name="lblDerechos">
      <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Copyright 2021 - 2022 &lt;span style=&quot; font-weight:600;&quot;&gt;Rainer Vergara&lt;/span&gt;. Universidad Politécnica Salesiana. Todos los derechos reservados. &lt;/p&gt;&lt;p&gt;&lt;br/&gt;Código disponible en &lt;a href=&quot;https://github.com/rtufino/P59-Qt-Salarios&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#007af4;&quot;&gt;GitHub&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Copyright 2021 - 2022 &lt;span style=&quot; font-weight:600;&quot;&gt;Rainer Vergara&lt;/span&gt;. Universidad Politécnica Salesiana. Todos los derechos reservados. &lt;/p&gt;&lt;p&gt;&lt;br/&gt;Código disponible en &lt;a href=&quot;https://github.com/rainerpro/P59-Qt_Salario-Aplicacion&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#007af4;&quot;&gt;GitHub&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
      <property name="wordWrap">
       <bool>true</bool>
