@@ -43,6 +43,5 @@ private:
     void limpiar();
     void guardar();
     void abrir();
-    void totales();
 };
 #endif // SALARIOS_H

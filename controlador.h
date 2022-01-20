@@ -19,26 +19,24 @@ public:
     explicit Controlador(QObject *parent = nullptr);
     bool agregarObrero(QString nombre, int horas, TipoJornada jornada);
     bool calcularSalario();
-    double m_totalBruto;
-    double m_totalIESS;
-    double m_totalNeto;
     Obrero *obrero() const;
 
-
-    double totalBruto() const;
+    double getTotalBruto() const;
     void setTotalBruto(double newTotalBruto);
 
-    double totalIESS() const;
+    double getTotalIESS() const;
     void setTotalIESS(double newTotalIESS);
 
-    double totalNeto() const;
+    double getTotalNeto() const;
     void setTotalNeto(double newTotalNeto);
 
 signals:
 
 private:
     Obrero *m_obrero;
-
+    double totalBruto=0;
+    double totalIESS=0;
+    double totalNeto=0;
 
 };
 

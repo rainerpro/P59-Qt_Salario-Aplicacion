@@ -47,55 +47,53 @@ bool Controlador::calcularSalario()
     double descuento = salarioBruto * IESS / 100;
     // Calculo del salario neto (a recibir)
     double salarioNeto = salarioBruto - descuento;
+    //
+    totalBruto=totalBruto+salarioBruto;
+    totalIESS= totalIESS+descuento;
+    totalNeto=totalNeto+salarioNeto;
     // Establecer valores al objeto
     m_obrero->setSalarioBruto(salarioBruto);
     m_obrero->setDescuento(descuento);
     m_obrero->setSalarioNeto(salarioNeto);
-
     // Retirnar true (todo se calculo correctamente)
-    m_totalBruto+=salarioBruto;
-    m_totalIESS+=descuento;
-    m_totalNeto+=salarioNeto;
-
-
     return true;
 }
-
 
 Obrero *Controlador::obrero() const
 {
     return m_obrero;
 }
 
-double Controlador::totalBruto() const
+double Controlador::getTotalBruto() const
 {
-    return m_totalBruto;
+    return totalBruto;
 }
 
 void Controlador::setTotalBruto(double newTotalBruto)
 {
-    m_totalBruto = newTotalBruto;
+    totalBruto = newTotalBruto;
 }
 
-double Controlador::totalIESS() const
+double Controlador::getTotalIESS() const
 {
-    return m_totalIESS;
+    return totalIESS;
 }
 
 void Controlador::setTotalIESS(double newTotalIESS)
 {
-    m_totalIESS = newTotalIESS;
+    totalIESS = newTotalIESS;
 }
 
-double Controlador::totalNeto() const
+double Controlador::getTotalNeto() const
 {
-    return m_totalNeto;
+    return totalNeto;
 }
 
 void Controlador::setTotalNeto(double newTotalNeto)
 {
-    m_totalNeto = newTotalNeto;
+    totalNeto = newTotalNeto;
 }
+
 
 
 
