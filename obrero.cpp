@@ -79,7 +79,6 @@ QString Obrero::toString()
     return str;
 }
 
-
 QString Obrero::jornada2String()
 {
     switch(m_jornada){

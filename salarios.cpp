@@ -18,6 +18,12 @@ Salarios::~Salarios()
 void Salarios::on_cmdCalcular_clicked()
 {
     calcular();
+
+    ui->outTBruto->setText(QString::number(m_controlador->m_totalBruto,'f',2));
+
+    ui->outTIESS->setText(QString::number(m_controlador->m_totalIESS));
+
+    ui->outTNeto->setText(QString::number(m_controlador->m_totalNeto,'f',2));
 }
 
 void Salarios::limpiar()
@@ -57,6 +63,7 @@ void Salarios::guardar()
 
 }
 
+
 void Salarios::abrir()
 {
     // Abrir cuadro de diálogo para seleccionar ubicación y nombre del archivo.
@@ -88,6 +95,66 @@ void Salarios::abrir()
     archivo.close();
 }
 
+void Salarios::totales()
+{
+    // Abrir cuadro de diálogo para seleccionar ubicación y nombre del archivo.
+    QString nombreArchivo = QFileDialog::getOpenFileName(this,
+                                                         "Abrir archivo",
+                                                         QDir::home().absolutePath(),
+                                                         "Archivos de salarios (*.txt)");
+    // Crear un objeto QFile
+    QFile archivo(nombreArchivo);
+    // Abrirlo para lectura
+    if(archivo.open(QFile::ReadOnly)){
+        QTextStream entrada(&archivo);
+        QString datos ="";
+        QString nombre;
+
+        while (nombre!= " - --------------------------" && entrada.atEnd()==false){
+            nombre=entrada.readLine();
+            if(nombre=="--------------------------------"){
+
+            }else {
+                datos+=nombre+"\n";
+            }
+        }
+
+        // cargar el contenido al area de texto
+        ui->outResultado->clear();
+        ui->outTBruto->clear();
+        ui->outTIESS->clear();
+        ui->outTNeto->clear();
+        //
+        ui->outResultado->setPlainText(datos);
+        //
+        entrada.readLine();
+        //
+        QString a;
+        a=entrada.readLine();
+        a.remove(0,14);
+        m_controlador->setTotalBruto(a.toDouble());
+        ui->outTBruto->setText(a);
+        //
+        QString b;
+        b=entrada.readLine();
+        b.remove(0,6);
+        m_controlador->setTotalIESS(b.toDouble());
+        ui->outTIESS->setText(b);
+        //
+        QString c;
+        c=entrada.readLine();
+        b.remove(0,13);
+        m_controlador->setTotalNeto(c.toDouble());
+        ui->outTNeto->setText(c);
+        //mostrar
+        ui->statusbar->showMessage("Datos Leidos desde" + nombreArchivo, 5000);
+    }else{
+        QMessageBox::warning(this,
+                             "Abrir Datos",
+                             "No se pudo abriri el archivo");
+    }
+
+}
 
 void Salarios::on_actionCalcular_triggered()
 {

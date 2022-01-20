@@ -51,11 +51,51 @@ bool Controlador::calcularSalario()
     m_obrero->setSalarioBruto(salarioBruto);
     m_obrero->setDescuento(descuento);
     m_obrero->setSalarioNeto(salarioNeto);
+
     // Retirnar true (todo se calculo correctamente)
+    m_totalBruto+=salarioBruto;
+    m_totalIESS+=descuento;
+    m_totalNeto+=salarioNeto;
+
+
     return true;
 }
+
 
 Obrero *Controlador::obrero() const
 {
     return m_obrero;
 }
+
+double Controlador::totalBruto() const
+{
+    return m_totalBruto;
+}
+
+void Controlador::setTotalBruto(double newTotalBruto)
+{
+    m_totalBruto = newTotalBruto;
+}
+
+double Controlador::totalIESS() const
+{
+    return m_totalIESS;
+}
+
+void Controlador::setTotalIESS(double newTotalIESS)
+{
+    m_totalIESS = newTotalIESS;
+}
+
+double Controlador::totalNeto() const
+{
+    return m_totalNeto;
+}
+
+void Controlador::setTotalNeto(double newTotalNeto)
+{
+    m_totalNeto = newTotalNeto;
+}
+
+
+
